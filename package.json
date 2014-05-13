@@ -1,14 +1,15 @@
 {
   "name": "language-pony",
   "main": "./lib/language-pony",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Language support for Pony in Atom.",
-  "activationEvents": ["language-pony:toggle"],
+  "activationEvents": [
+    "language-pony:toggle"
+  ],
   "repository": "https://github.com/sylvanc/language-pony",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
