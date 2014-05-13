@@ -1,0 +1,225 @@
+'scopeName': 'source.pony'
+'fileTypes': ['pony']
+'firstLineMatch': '^#!/.*\\b\\w*pony\\b'
+'foldingStartMarker': '/\\*\\*|\\{\\s*$' # FIX:
+'foldingStopMarker': '\\*\\*/|^\\s*\\}' # FIX:
+'name': 'Pony'
+'patterns': [
+  {
+    'include': '#ponydocs'
+  }
+  {
+    'include': '#block-comments'
+  }
+  {
+    'include': '#line-comments'
+  }
+  {
+    'include': '#declarations'
+  }
+  {
+    'include': '#keywords'
+  }
+  {
+    'include': '#constants'
+  }
+  {
+    'include': '#identifiers'
+  }
+  {
+    'include': '#meta-brackets'
+  }
+  {
+    'include': '#meta-colons'
+  }
+  {
+    'include': '#strings'
+  }
+  # {
+  #   'include': '#invalid'
+  # }
+]
+'repository':
+  'ponydocs':
+    'begin': '^\\s*(/\\*\\*)[^/]'
+    'beginCaptures':
+      '1':
+        'name': 'punctuation.definition.comment.pony'
+    'end': '\\*/'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.comment.pony'
+    'name': 'comment.block.documentation.pony'
+    'patterns': [
+      {
+        'include': '#block-comments'
+      }
+      {
+        'captures':
+          '1':
+            'name': 'keyword.other.documentation.ponydoc.pony'
+          '2':
+            'name': 'variable.parameter.pony'
+        'match': '(@param)\\s+(\\S+)'
+      }
+      {
+        'match': '@(return|see|note|example|usecase|author|version|since|todo|deprecated|migration|define)\\b'
+        'name': 'keyword.other.documentation.ponydoc.pony'
+      }
+      {
+        'captures':
+          '1':
+            'name': 'punctuation.definition.documentation.link.pony'
+          '2':
+            'name': 'entity.other.documentation.link.pony'
+          '3':
+            'name': 'punctuation.definition.documentation.link.pony'
+        'match': '(\\[\\[)([^\\]]+)(\\]\\])'
+      }
+    ]
+  'block-comments':
+    'begin': '/\\*'
+    'end': '\\*/'
+    'name': 'comment.block.pony'
+    'patterns': [
+      {
+        'include': '#block-comments'
+      }
+    ]
+  'line-comments':
+    'captures':
+      '1':
+        'name': 'comment.line.double-slash.pony'
+      '2':
+        'name': 'punctuation.definition.comment.pony'
+    'match': '\\s*((//).*$)'
+  'constants':
+    'patterns': [
+      {
+        'match': '\\b((0b[0-1]*)|(0o[0-7]*)|(0x[0-9a-fA-F]*)|([0-9]+(\\.[0-9]+)?((e|E)(\\+|-)?[0-9]+)?))\\b'
+        'name': 'constant.numeric.pony'
+      }
+    ]
+  'declarations':
+    'captures':
+      '1':
+        'name': 'keyword.declaration.pony'
+      '2':
+        'name': 'entity.name.type.declaration'
+    'match': "\\b(type|trait|class|actor)\\s+([_A-Z][_a-zA-Z0-9\\']*)"
+  'keywords':
+    'patterns': [
+      {
+        'match': '\\b(use|as)\\b'
+        'name': 'keyword.declaration.import.pony'
+      }
+      {
+        'match': '\\b(var|val)\\b'
+        'name': 'keyword.declaration.pony'
+      }
+      {
+        'match': '\\b(new|be|fun)\\b'
+        'name': 'keyword.declaration.method.pony'
+      }
+      {
+        'match': '\\b(iso|trn|mut|imm|box|tag)\\b'
+        'name': 'keyword.declaration.capability.pony'
+      }
+      {
+        'match': '\\b(return|error)\\b'
+        'name': 'keyword.control.flow.jump.pony'
+      }
+      {
+        'match': '\\b(if|then|elseif|else|end|do|while|for|in|match|try|consume|recover)\\b'
+        'name': 'keyword.control.flow.pony'
+      }
+      {
+        'match': '(\\-|\\+|\\*|/(?![/*])|%|<<|>>)'
+        'name': 'keyword.operator.arithmetic.pony'
+      }
+      {
+        'match': '(==|!=|<=|>=|<|>)'
+        'name': 'keyword.operator.comparison.pony'
+      }
+      {
+        'match': '\\b(is|isnt|not|and|or|xor)\\b'
+        'name': 'keyword.control.logical.pony'
+      }
+      {
+        'match': '(\\?|=>)'
+        'name': 'keyword.operator.body.pony'
+      }
+      {
+        'match': '(\\||\\&|\\,|\\^)'
+        'name': 'keyword.operator.type.pony'
+      }
+    ]
+  'meta-brackets':
+    'comment': 'For themes: Brackets look nice when colored.'
+    'patterns': [
+      {
+        'match': '{|}|\\(|\\)|\\[|\\]'
+        'name': 'meta.bracket.pony'
+      }
+    ]
+  'meta-colons':
+    'comment': 'For themes: Matching type colons'
+    'patterns': [
+      {
+        'match': '(?<!:):(?!:)'
+        'name': 'meta.colon.pony'
+      }
+    ]
+  'identifiers':
+    'patterns': [
+      {
+        'match': '\\b(this)\\b'
+        'name': 'variable.language.pony'
+      }
+      {
+        'match': "\\b(_*[A-Z][_a-zA-Z0-9\\']*)\\b"
+        'name': 'entity.name.class.pony'
+      }
+      {
+        'match': "\\b(_+[a-z][_a-zA-Z0-9\\']*)\\b"
+        'name': 'variable.private.pony'
+      }
+    ]
+  'strings':
+    'patterns': [
+      {
+        'begin': '"""'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.string.begin.pony'
+        'end': '"""(?!")'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.string.end.pony'
+        'name': 'string.quoted.triple.pony'
+      }
+      {
+        'begin': '"'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.string.begin.pony'
+        'end': '"'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.string.end.pony'
+        'name': 'string.quoted.double.pony'
+        'patterns': [
+          {
+            'match': '\\\\(?:[abfnrtv\\\\"0]|u[0-9A-Fa-f]{4}|U[0-9A-Fa-f]{6})'
+            'name': 'constant.character.escape.pony'
+          }
+          {
+            'match': '\\\\.'
+            'name': 'invalid.illegal.unrecognized-string-escape.pony'
+          }
+        ]
+      }
+    ]
+  'invalid':
+    'match': '.*'
+    'name': 'invalid.illegal.pony'
