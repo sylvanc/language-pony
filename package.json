@@ -1,7 +1,7 @@
 {
   "name": "language-pony",
   "main": "./lib/language-pony",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Language support for Pony in Atom.",
   "activationEvents": [
     "language-pony:toggle"

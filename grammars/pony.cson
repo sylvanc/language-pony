@@ -1,8 +1,6 @@
 'scopeName': 'source.pony'
 'fileTypes': ['pony']
 'firstLineMatch': '^#!/.*\\b\\w*pony\\b'
-'foldingStartMarker': '/\\*\\*|\\{\\s*$' # FIX:
-'foldingStopMarker': '\\*\\*/|^\\s*\\}' # FIX:
 'name': 'Pony'
 'patterns': [
   {
@@ -35,9 +33,6 @@
   {
     'include': '#strings'
   }
-  # {
-  #   'include': '#invalid'
-  # }
 ]
 'repository':
   'ponydocs':
@@ -85,14 +80,14 @@
       {
         'include': '#block-comments'
       }
+      {
+        'include': '#comment-keywords'
+      }
     ]
   'line-comments':
-    'captures':
-      '1':
-        'name': 'comment.line.double-slash.pony'
-      '2':
-        'name': 'punctuation.definition.comment.pony'
-    'match': '\\s*((//).*$)'
+    'begin': '//'
+    'end': '\n'
+    'name': 'comment.line.double-slash.pony'
   'constants':
     'patterns': [
       {
@@ -114,7 +109,7 @@
         'name': 'keyword.declaration.import.pony'
       }
       {
-        'match': '\\b(var|val)\\b'
+        'match': '\\b(var|let)\\b'
         'name': 'keyword.declaration.pony'
       }
       {
@@ -122,7 +117,7 @@
         'name': 'keyword.declaration.method.pony'
       }
       {
-        'match': '\\b(iso|trn|mut|imm|box|tag)\\b'
+        'match': '\\b(iso|trn|ref|val|box|tag)\\b'
         'name': 'keyword.declaration.capability.pony'
       }
       {
@@ -220,6 +215,3 @@
         ]
       }
     ]
-  'invalid':
-    'match': '.*'
-    'name': 'invalid.illegal.pony'
