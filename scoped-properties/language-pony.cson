@@ -1,6 +1,6 @@
 '.source.pony':
   'editor':
-    'increaseIndentPattern': '^\\s*(type|trait|class|actor).*$|^\\s*(if|then|else|elseif|for|do|while|repeat|until|try|match)\\b((?!end).)*$|^.*(\\{[^\\}]*|\\([^\\)]*|\\[[^\\]]*|=>\\s*)$'
+    'increaseIndentPattern': '^\\s*(type|trait|class|actor).*$|(if|then|else|elseif|for|do|while|repeat|until|try|match)\\b((?!end).)*$|^.*(\\{[^\\}]*|\\([^\\)]*|\\[[^\\]]*|\\|[^\\)]*)$|=>'
     'decreaseIndentPattern': '^\\s*(then|else|elseif|until|end|\\|)'
 '.keyword.other.documentation.ponydoc.pony':
   'editor':

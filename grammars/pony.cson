@@ -105,6 +105,10 @@
   'keywords':
     'patterns': [
       {
+        'match': '\\b(compiler_intrinsic)\\b'
+        'name': 'keyword.declaration.intrinsic.pony'
+      }
+      {
         'match': '\\b(use|as)\\b'
         'name': 'keyword.declaration.import.pony'
       }
@@ -125,7 +129,7 @@
         'name': 'keyword.control.flow.jump.pony'
       }
       {
-        'match': '\\b(if|then|elseif|else|end|do|while|for|in|match|try|consume|recover)\\b'
+        'match': '\\b(if|then|elseif|else|end|do|while|for|in|match|where|try|consume|recover)\\b'
         'name': 'keyword.control.flow.pony'
       }
       {
