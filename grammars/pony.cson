@@ -101,36 +101,40 @@
         'name': 'keyword.declaration.pony'
       '2':
         'name': 'entity.name.type.declaration'
-    'match': "\\b(type|trait|class|actor)\\s+([_A-Z][_a-zA-Z0-9\\']*)"
+    'match': "\\b(type|trait|primitive|class|actor)\\s+([_A-Z][_a-zA-Z0-9\\']*)"
   'keywords':
     'patterns': [
       {
         'match': '\\b(compiler_intrinsic)\\b'
-        'name': 'keyword.declaration.intrinsic.pony'
+        'name': 'keyword.other.intrinsic.pony'
       }
       {
         'match': '\\b(use|as)\\b'
-        'name': 'keyword.declaration.import.pony'
+        'name': 'keyword.other.import.pony'
       }
       {
         'match': '\\b(var|let)\\b'
-        'name': 'keyword.declaration.pony'
+        'name': 'keyword.other.pony'
       }
       {
         'match': '\\b(new|be|fun)\\b'
-        'name': 'keyword.declaration.method.pony'
+        'name': 'keyword.other.method.pony'
       }
       {
-        'match': '\\b(iso|trn|ref|val|box|tag)\\b'
-        'name': 'keyword.declaration.capability.pony'
+        'match': '\\b(iso|trn|ref|val|box|tag|consume)\\b'
+        'name': 'keyword.other.capability.pony'
       }
       {
-        'match': '\\b(return|error)\\b'
-        'name': 'keyword.control.flow.jump.pony'
+        'match': '\\b(break|continue|return|error)\\b'
+        'name': 'keyword.control.jump.pony'
       }
       {
-        'match': '\\b(if|then|elseif|else|end|do|while|for|in|match|where|try|consume|recover)\\b'
-        'name': 'keyword.control.flow.pony'
+        'match': '\\b(if|then|elseif|else|end|match|where|try|recover)\\b'
+        'name': 'keyword.control.pony'
+      }
+      {
+        'match': '\\b(while|do|repeat|until|for|in)\\b'
+        'name': 'keyword.control.loop.pony'
       }
       {
         'match': '(\\-|\\+|\\*|/(?![/*])|%|<<|>>)'
@@ -142,7 +146,11 @@
       }
       {
         'match': '\\b(is|isnt|not|and|or|xor)\\b'
-        'name': 'keyword.control.logical.pony'
+        'name': 'keyword.operator.logical.pony'
+      }
+      {
+        'match': '(=)'
+        'name': 'keyword.operator.assign.pony'
       }
       {
         'match': '(\\?|=>)'
@@ -173,7 +181,7 @@
     'patterns': [
       {
         'match': '\\b(this)\\b'
-        'name': 'variable.language.pony'
+        'name': 'constant.other.pony'
       }
       {
         'match': "\\b(_*[A-Z][_a-zA-Z0-9\\']*)\\b"
@@ -181,7 +189,11 @@
       }
       {
         'match': "\\b(_+[a-z][_a-zA-Z0-9\\']*)\\b"
-        'name': 'variable.private.pony'
+        'name': 'variable.parameter.pony'
+      }
+      {
+        'match': '\\b(true|false)\\b'
+        'name': 'constant.language.pony'
       }
     ]
   'strings':
@@ -195,7 +207,7 @@
         'endCaptures':
           '0':
             'name': 'punctuation.definition.string.end.pony'
-        'name': 'string.quoted.triple.pony'
+        'name': 'string.unquoted.pony'
       }
       {
         'begin': '"'
@@ -206,7 +218,7 @@
         'endCaptures':
           '0':
             'name': 'punctuation.definition.string.end.pony'
-        'name': 'string.quoted.double.pony'
+        'name': 'string.quoted.pony'
         'patterns': [
           {
             'match': '\\\\(?:[abfnrtv\\\\"0]|u[0-9A-Fa-f]{4}|U[0-9A-Fa-f]{6})'
@@ -214,7 +226,7 @@
           }
           {
             'match': '\\\\.'
-            'name': 'invalid.illegal.unrecognized-string-escape.pony'
+            'name': 'invalid.illegal.pony'
           }
         ]
       }
