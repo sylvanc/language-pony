@@ -1,18 +1,7 @@
 '.source.pony':
   'editor':
-    'increaseIndentPattern': '^\\s*(type|trait|class|actor).*$|(if|then|else|elseif|for|do|while|repeat|until|try|match)\\b((?!end).)*$|^.*(\\{[^\\}]*|\\([^\\)]*|\\[[^\\]]*|\\|[^\\)]*)$|=>'
+    'tabLength': 2
+    'commentStart': '// '
+    'foldEndPattern': '^\\s*"""\\s*$'
+    'increaseIndentPattern': '^\\s*(type|interface|trait|primitive|class|actor)\\b|\\b(if|then|else|elseif|for|in|do|while|repeat|until|try|match)\\b((?!end).)*$|(\\{[^\\}]*|\\([^\\)]*|\\[[^\\]]*)$|=>'
     'decreaseIndentPattern': '^\\s*(then|else|elseif|until|end|\\|)'
-'.keyword.other.documentation.ponydoc.pony':
-  'editor':
-    'completions': [
-      'author'
-      'version'
-      'param'
-      'return'
-      'exception'
-      'see'
-      'since'
-      'serial'
-      'deprecated'
-      'link'
-    ]
