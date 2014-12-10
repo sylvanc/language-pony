@@ -3,5 +3,5 @@
     'tabLength': 2
     'commentStart': '// '
     'foldEndPattern': '^\\s*"""\\s*$'
-    'increaseIndentPattern': '^\\s*(type|interface|trait|primitive|class|actor)\\b|\\b(if|then|else|elseif|for|in|do|while|repeat|until|try|with|match)\\b((?!end).)*$|(\\{[^\\}]*|\\([^\\)]*|\\[[^\\]]*)$|=>'
+    'increaseIndentPattern': '^\\s*(type|interface|trait|primitive|class|actor)\\b|\\b(if|then|else|elseif|for|in|do|while|repeat|until|try|with|match|object)\\b((?!end).)*$|(\\{[^\\}]*|\\([^\\)]*|\\[[^\\]]*)$|=>'
     'decreaseIndentPattern': '^\\s*(then|else|elseif|until|end|\\|)'
