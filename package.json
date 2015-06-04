@@ -1,10 +1,12 @@
 {
   "name": "language-pony",
   "main": "./lib/language-pony",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "description": "Language support for Pony in Atom.",
   "activationCommands": {
-    "atom-text-editor": ["language-pony:toggle"]
+    "atom-text-editor": [
+      "language-pony:toggle"
+    ]
   },
   "repository": "https://github.com/sylvanc/language-pony",
   "license": "MIT",
