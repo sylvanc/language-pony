@@ -59,7 +59,7 @@
         'name': 'keyword.declaration.pony'
       '2':
         'name': 'entity.name.type.declaration'
-    'match': "\\b(type|interface|trait|primitive|class|actor)\\s+@?\\s*([_A-Z][_a-zA-Z0-9\\']*)"
+    'match': "\\b(type|interface|trait|primitive|class|struct|actor)\\s+@?\\s*([_A-Z][_a-zA-Z0-9\\']*)"
   'keywords':
     'patterns': [
       {
@@ -71,7 +71,7 @@
         'name': 'keyword.other.import.pony'
       }
       {
-        'match': '\\b(var|let)\\b'
+        'match': '\\b(var|let|embed)\\b'
         'name': 'keyword.other.pony'
       }
       {
