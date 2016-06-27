@@ -1,7 +1,7 @@
 {
   "name": "language-pony",
   "main": "./lib/language-pony",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "description": "Language support for Pony in Atom.",
   "activationCommands": {
     "atom-text-editor": [
