@@ -87,7 +87,7 @@
         'name': 'keyword.control.jump.pony'
       }
       {
-        'match': '\\b(if|then|elseif|else|end|match|where|try|with|as|recover|object|lambda|as|identityof)\\b'
+        'match': '\\b(if|then|elseif|else|end|match|where|try|with|as|recover|object|lambda|as|digestof|ifdef)\\b'
         'name': 'keyword.control.pony'
       }
       {
