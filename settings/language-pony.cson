@@ -1,6 +1,5 @@
 '.source.pony':
   'editor':
-    'tabLength': 2
     'commentStart': '// '
     'foldEndPattern': '^\\s*"""\\s*$'
     'increaseIndentPattern': '^\\s*(type|interface|trait|primitive|class|actor)\\b|\\b(if|then|else|elseif|for|in|do|while|repeat|until|try|with|match|object|recover)\\b((?!end).)*$|(\\([^\\)]*|\\[[^\\]]*)$|=>'
